@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> eL_TRo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="layanan.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  </head>
+    <script src="https://kit.fontawesome.com/a13079dbc9.js" crossorigin="anonymous"></script>
+<body>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="/" id="navbar__logo"><i class="fas fa-bolt"></i> eL-TRo </a>
+        <div class="navbar__toggle" id="mobile-menu">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </div>
+        <ul class="navbar__menu">
+          <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+          <li class="navbar__item"><a href="produk.html" class="navbar__links">Produk</a></li>
+          <li class="navbar__item"><a href="layanan.html" class="navbar__links active">Layanan</a></li>
+          <li class="navbar__btn"><a href="login.html" class="button">Sign-Up</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="layanan-container">
+        <h1 class="layanan-title">Layanan & Alat Interaktif</h1>
+        
+        <div class="tab-container">
+            <div class="tab active" data-tab="resistor">Decoder Resistor</div>
+            <div class="tab" data-tab="ohm">Hukum Ohm</div>
+            <div class="tab" data-tab="biaya">Kalkulator Biaya</div>
+            <div class="tab" data-tab="wiring">Diagram Wiring</div>
+            <div class="tab" data-tab="project">Generator Projek</div>
+        </div>
+        
+        <div class="tab-content active" id="resistor-tab">
+            <div class="calculator-card full-width">
+                <h2><i class="fas fa-palette"></i> Decoder Kode Warna Resistor</h2>
+                <p>Pilih jumlah gelang, lalu klik warna di bawah untuk mengidentifikasi nilai resistor secara akurat. Arahkan kursor ke warna untuk melihat deskripsi.</p>
+                <div class="band-selector">
+                    <input type="radio" name="band-type" id="3-band" value="3"><label for="3-band">3 Pita</label>
+                    <input type="radio" name="band-type" id="4-band" value="4" checked><label for="4-band">4 Pita</label>
+                    <input type="radio" name="band-type" id="5-band" value="5"><label for="5-band">5 Pita</label>
+                    <input type="radio" name="band-type" id="6-band" value="6"><label for="6-band">6 Pita</label>
+                </div>
+                <div class="resistor-display">
+                    <div class="wire"></div>
+                    <div class="resistor-body" id="resistor-body-visual"></div>
+                    <div class="wire"></div>
+                </div>
+                <div id="resistor-color-selectors"></div>
+                <div id="resistor-result" class="result"></div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="ohm-tab">
+          <div class="calculator-card">
+            <div class="formula-box">
+              <div>V = I x R</div>
+              <div>I = V / R </div>
+              <div>R = V / I </div>
+              </div>
+                <h2><i class="fas fa-calculator"></i> Kalkulator Hukum Ohm</h2>
+                <p>Kosongkan satu kolom untuk menghitung nilainya.</p>
+                <div class="input-group"><label for="ohm-v">Tegangan (V)</label><input type="number" id="ohm-v" placeholder="Volt"></div>
+                <div class="input-group"><label for="ohm-i">Arus (I)</label><input type="number" id="ohm-i" placeholder="Ampere"></div>
+                <div class="input-group"><label for="ohm-r">Hambatan (R)</label><input type="number" id="ohm-r" placeholder="Ohm"></div>
+                <div id="ohm-result" class="result">
+                </div>
+          </div>
+        </div>
+        
+        <div class="tab-content" id="biaya-tab">
+            <div class="layanan-grid">
+                <div class="calculator-card">
+                    <h2><i class="fas fa-cash-register"></i> Estimasi Biaya Layanan</h2>
+                    <p>Pilih layanan atau rental alat untuk ditambahkan ke estimasi biaya.</p>
+                    <div class="input-group">
+                        <label for="layanan-select">Jenis Layanan</label>
+                        <select id="layanan-select">
+                            <option value="">Pilih Layanan</option>
+                            <option value="seminar">Seminar</option>
+                            <option value="rental">Rental Alat</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="troubleshooting">Troubleshooting</option>
+                            <option value="150000">Konsultasi (Rp 150rb/sesi)</option>
+                            <option value="200000">Desain PCB (Rp 200rb/sesi)</option>
+                            <option value="25000">Pengembangan Firmware (Rp 25rb/sesi)</option> 
+                            <option value="250000">Pengembangan Prototipe (Rp 250rb/sesi)</option> 
+                            <option value="300000">Prototyping (Rp 300rb/sesi)</option>
+                            <option value="500000">Pengembangan Produk (Rp 500rb/sesi)</option>
+                            <option value="1000000">Kustomisasi Firmware (Rp 1jt/sesi)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" id="troubleshooting-group" style="display:none;">
+                        <label for="troubleshooting-select">Pilih Paket Troubleshooting</label>
+                        <select id="troubleshooting-select">
+                            <option value="25000">Troubleshooting Basic (Rp 25rb/sesi)</option>
+                            <option value="50000">Troubleshooting (Rp 50rb/sesi)</option>
+                            <option value="80000">Troubleshooting Plus (Rp 80rb/sesi)</option>
+                            <option value="100000">Troubleshooting Premium (Rp 100rb/sesi)</option>
+                            <option value="150000">Troubleshooting Ultimate (Rp 150rb/sesi)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" id="seminar-group" style="display:none;">
+                        <label for="seminar-select">Pilih Paket Seminar</label>
+                        <select id="seminar-select">
+                            <option value="250000">Seminar (100-200 orang) (Rp 250rb/sesi)</option>
+                            <option value="500000">Seminar Plus (200-500 orang) (Rp 500rb/sesi)</option>
+                            <option value="1000000">Seminar Premium (500+ orang) (Rp 1jt/sesi)</option>
+                            <option value="1500000">Seminar Ultimate (1000+ orang) (Rp 1,5jt/sesi)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" id="workshop-group" style="display:none;">
+                        <label for="workshop-select">Pilih Kelas Workshop</label>
+                        <select id="workshop-select">
+                            <option value="100000">Workshop Basic 50-100 orang (Rp 100rb/sesi)</option>
+                            <option value="200000">Workshop Intermediate 50-25 orang (Rp 200rb/sesi)</option>
+                            <option value="300000">Workshop Advanced 25-10 orang (Rp 300rb/sesi)</option>
+                            <option value="500000">Workshop Expert 10 - 5 orang (Rp 500rb/sesi)</option>
+                            <option value="1000000">Workshop Master 5 orang (Rp 1jt/sesi)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group" id="alat-group" style="display:none;">
+                        <label for="alat-select">Pilih Alat</label>
+                        <select id="alat-select">
+                            <option value="30000">Multimeter (Rp 30rb/hari)</option>
+                            <option value="50000">Power Supply (Rp 50rb/hari)</option>
+                            <option value="100000">Oscilloscope (Rp 100rb/hari)</option>
+                            <option value="150000">Logic Analyzer (Rp 150rb/hari)</option>
+                            <option value="200000">Arduino Starter Kit (Rp 200rb/hari)</option>
+                            <option value="250000">Raspberry Pi Kit (Rp 250rb/hari)</option>
+                            <option value="300000">ESP32 Kit (Rp 300rb/hari)</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="qty">Kuantitas (Jam/Hari/Sesi)</label>
+                        <input type="number" id="qty" min="1" value="1">
+                    </div>
+                    <button class="calc-button" id="tambah-layanan-btn">Tambah ke Rincian</button>
+                </div>
+                <div class="calculator-card">
+                    <h2><i class="fas fa-receipt"></i> Rincian Biaya</h2>
+                    <ul id="biaya-list">
+                        <li class="empty">Belum ada layanan yang ditambahkan.</li>
+                    </ul>
+                    <div id="biaya-total" class="result">
+  <span class="total-label">Total :</span>
+  <span class="total-value">Rp 0</span>
+</div>
+<div>
+  <a href="login.html" class="button" id="btn-ke-login">Login untuk Melanjutkan</a>
+</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-content" id="wiring-tab">
+            <div class="calculator-card full-width">
+                <h2><i class="fas fa-sitemap"></i> Generator Diagram Wiring</h2>
+                <p>Pilih jenis rangkaian untuk menghasilkan diagram koneksi berbasis teks secara otomatis.</p>
+                <div class="input-group">
+                    <label for="wiring-select">Pilih Rangkaian</label>
+                    <select id="wiring-select">
+                        <option value="led">LED Sederhana (Arduino)</option>
+                        <option value="motor">Motor DC dengan Switch</option>
+                        <option value="sensor">Sensor Jarak HC-SR04 (Arduino)</option>
+                        <option value="relay">Relay 1 Channel (Arduino)</option>
+                        <option value="servo">Servo Motor (Arduino)</option>
+                        <option value="lcd">LCD 16x2 I2C (Arduino)</option>
+                        <option value="dht">Sensor Suhu DHT11 (Arduino)</option>
+                        <option value="buzzer">Buzzer Aktif (Arduino)</option>
+                        <option value="potensiometer">Potensiometer sebagai Input (Arduino)</option>
+                        <option value="ultrasonic">Ultrasonic Sensor (ESP32)</option>
+                    </select>
+                </div>
+                <button class="calc-button" id="generate-wiring-btn">Generate Diagram</button>
+                <pre id="wiring-output"></pre>
+            </div>
+        </div>
+
+        <div class="tab-content" id="project-tab">
+            <div class="layanan-grid">
+                <div class="calculator-card">
+                    <h2><i class="fas fa-lightbulb"></i> Generator Ide Projek</h2>
+                    <p>Butuh inspirasi? Klik tombol di bawah untuk mendapatkan ide proyek acak.</p>
+                    <button class="calc-button" id="generate-project-btn">Dapatkan Ide Baru!</button>
+                    <div id="project-idea"></div>
+                </div>
+                <div class="calculator-card">
+                    <h2><i class="fas fa-star"></i> Proyek Favorit</h2>
+                    <div id="favorite-projects">
+                        <p class="empty">Belum ada proyek favorit yang disimpan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+  <div class="footer__container">
+    <div class="footer__links">
+      <div class="footer__link--items">
+        <h2>About Us</h2>
+        <a href="/">Privacy Policy</a>
+        <a href="/">Refund Policy</a>
+        <a href="/">Cookie Policy</a>
+        <a href="/">Warranty Policy</a>
+        <a href="/">Terms & Condition</a>
+      </div>
+      <div class="footer__link--items">
+        <h2>Bantuan Dan Support</h2>
+        <a href="/"><i class="fas fa-phone"></i> telpon (082342342342)</a>
+        <a href="/"><i class="fas fa-envelope"></i> email (eL-TRo@Bness.com)</a>
+        <a href="/"><i class="fas fa-clock"></i> 08:00-21:00</a>
+        <a href="/"><i class="fas fa-map"></i> Jl. harapan VII No.32</a>
+      </div>
+      <div class="footer__link--items partner-section">
+        <h2>Official Partner</h2>
+        <div class="partner-logos">
+          <div class="partner-logo-tooltip">
+            <img src="partners/arduino-logo-0.png" alt="Arduino" />
+            <span class="tooltip-text">Arduino: Platform mikrokontroler open-source terpopuler</span>
+          </div>
+          <div class="partner-logo-tooltip">
+            <img src="partners/raspberrypi_logo_icon_168030.webp" alt="Raspberry Pi" />
+            <span class="tooltip-text">Raspberry Pi: Komputer mini untuk edukasi dan IoT</span>
+          </div>
+          <div class="partner-logo-tooltip">
+            <img src="partners/logo_espressif.png" alt="Espressif" />
+            <span class="tooltip-text">Espressif: Produsen chip ESP32 dan ESP8266</span>
+          </div>
+          <div class="partner-logo-tooltip">
+            <img src="partners/cropped-Logo-REC-2-3-2048x2048.png" alt="REC" />
+            <span class="tooltip-text">REC: Komunitas edukasi robotik</span>
+          </div>
+          <div class="partner-logo-tooltip">
+            <img src="partners/Autodesk-Emblem.png" alt="Autodesk" />
+            <span class="tooltip-text">Autodesk: Software desain teknik dan 3D</span>
+          </div>
+          <div class="partner-logo-tooltip">
+            <img src="partners/favicon.ico" alt="TinkerCAD" />
+            <span class="tooltip-text">TinkerCAD: Simulasi rangkaian elektronik online</span>
+          </div>
+          <div class="partner-logo-tooltip">
+            <img src="partners/LOGO-JNT.png" alt="J&T" />
+            <span class="tooltip-text">J&T: Partner logistik pengiriman</span>
+          </div>
+          <div class="partner-logo-tooltip">
+            <img src="partners/JNE.png" alt="JNE" />
+            <span class="tooltip-text">JNE: Partner logistik pengiriman</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__link--items payment-section">
+        <h2>Metode Pembayaran</h2>
+        <div class="payment-methods-vertical">
+          <div class="payment-method-item">
+            <span>Bayar Di Tempat</span>
+            <i class="fas fa-truck-fast"></i>
+          </div>
+          <div class="payment-method-item">
+            <span>Tunai</span>
+            <i class="fas fa-money-bill-wave"></i>
+          </div>
+          <div class="payment-method-item">
+            <span>Non-Tunai</span>
+            <div class="payment-brand-icons">
+              <i class="fab fa-cc-mastercard"></i>
+              <i class="fab fa-cc-visa"></i>
+              <i class="fab fa-paypal"></i>
+              <i class="fas fa-building-columns"></i>
+              <i class="fas fa-wallet"></i>
+              <i class="fas fa-qrcode"></i>
+              <i class="fas fa-store"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="social__media">
+      <div class="social__media--wrap">
+        <div class="footer__logo">
+          <a href="/" id="footer__logo"><i class="fas fa-bolt"></i>eL-TRo</a>
+        </div>
+        <p class="website__rights">© 2025. All rights reserved</p>
+        <div class="social__icons">
+          <a class="social__icon--link" href="/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a class="social__icon--link" href="/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a class="social__icon--link" href="/" target="_blank" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+          <a class="social__icon--link" href="/" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a class="social__icon--link" href="/" target="_blank" aria-label="Linkedin"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </section>
+  </div>
+</footer>
+    <script src="app.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Cek hash di URL
+  const hash = window.location.hash;
+  if (hash === '#biaya-tab') {
+    // Nonaktifkan semua tab & konten
+    document.querySelectorAll('.tab, .tab-content').forEach(el => el.classList.remove('active'));
+    // Aktifkan tab biaya
+    document.querySelector('.tab[data-tab="biaya"]').classList.add('active');
+    document.getElementById('biaya-tab').classList.add('active');
+    // Scroll ke panel kalkulator biaya
+    document.getElementById('biaya-tab').scrollIntoView({behavior: 'smooth'});
+  }
+});
+</script>
+</body>
+</html>

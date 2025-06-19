@@ -1,0 +1,369 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    background-color: #1f303b; /* Latar belakang utama */
+}
+
+.layanan-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.layanan-title {
+    color: #47e5bc; /* Warna aksen utama */
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* Styling untuk Tab Navigasi */
+.tab-container {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #2c3e50;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.tab {
+    padding: 15px 30px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #8ea8c3;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+}
+
+.tab:hover {
+    color: #47e5bc;
+}
+
+.tab.active {
+    color: #47e5bc;
+    border-bottom-color: #47e5bc;
+}
+
+/* Styling untuk Konten Tab */
+.tab-content {
+    display: none;
+    gap: 30px;
+}
+
+.tab-content.active {
+    display: grid;
+    grid-template-columns: 1fr;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1, transform: translateY(0); }
+}
+
+.layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+
+/* Styling Kartu Kalkulator */
+.calculator-card {
+    background: #1f3647; /* Sedikit lebih terang dari background utama */
+    color: #ecf0f1;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid #2c3e50;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.formula-box{
+    position: absolute; /* Membuatnya melayang di dalam parent */
+    top: 25px;          /* Jarak dari atas */
+    right: 25px;         /* Jarak dari kanan */
+    background: rgba(0, 0, 0, 0.2); /* Latar belakang transparan */
+    color: #95a5a6;     /* Warna teks yang lembut */
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-family: 'Orbitron', sans-serif; /* Menggunakan font techy */
+    font-weight: 500;
+}
+
+.formula-box div {
+  line-height: 1.5;   /* Memberi jarak vertikal antar baris rumus */
+  text-align: right;  /* Merapikan teks ke kanan agar sejajar */
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.calculator-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #47e5bc;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.calculator-card h2 i {
+    margin-right: 10px;
+}
+
+.calculator-card p {
+    margin-bottom: 25px;
+    color: #bdc3c7;
+}
+
+/* Styling untuk Grup Input */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #47e5bc;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px 15px;
+    background: #182a36;
+    border: 2px solid #2c3e50;
+    color: #ecf0f1;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #47e5bc;
+}
+
+/* Styling Tombol */
+.calc-button {
+    font-size: 1rem;
+    background-image: linear-gradient(to right, #47e5bc 0%, #82f7d8 100%);
+    padding: 12px 28px;
+    border: none;
+    border-radius: 4px;
+    color: #182a36;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.35s;
+    outline: none;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.calc-button:hover {
+    filter: brightness(1.1);
+    background: #ff4d80;
+}
+
+/* Styling Area Hasil */
+.result {
+    background: #182a36;
+    padding: 15px;
+    margin-top: 20px;
+    border-left: 4px solid #47e5bc;
+    border-radius: 4px;
+    font-weight: 700;
+    min-height: 50px;
+    word-wrap: break-word;
+}
+
+#btn-ke-login{
+    font-size: 1rem;
+    background-image: linear-gradient(to right, #47e5bc 0%, #82f7d8 100%);
+    padding: 12px 28px;
+    border: none;
+    border-radius: 4px;
+    color: #182a36;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.35s;
+    outline: none;
+    width: 100%;
+    margin-top: 30px;
+}
+
+#btn-ke-login:hover {
+    filter: brightness(1.1);
+    background: #ff4d80;
+}
+
+/* --- Gaya untuk Decoder Resistor --- */
+.resistor-display {
+    display: flex; justify-content: center; margin: 20px 0;
+    height: 60px; align-items: center;
+}
+.resistor-body {
+    width: 250px; height: 35px; background: #f0d9b5; position: relative;
+    display: flex; justify-content: space-evenly; align-items: center;
+    border-radius: 3px;
+}
+.resistor-band { width: 12px; height: 35px; transition: background 0.3s; }
+.wire { height: 3px; width: 35px; background: #bdc3c7; }
+.band-selector { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.band-selector input[type="radio"] { display: none; }
+.band-selector label {
+    padding: 8px 15px; background: #2c3e50; color: #47e5bc;
+    border-radius: 20px; cursor: pointer; transition: background 0.3s;
+}
+.band-selector input[type="radio"]:checked + label { background: #47e5bc; color: #182a36; }
+#resistor-color-selectors { margin-top: 20px; }
+.color-code-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 10px; margin-top: 10px;
+}
+.color-option { height: 40px; border-radius: 8px; cursor: pointer; border: 3px solid transparent; transition: transform 0.2s; position: relative; }
+.color-option.selected { border-color: #47e5bc; transform: scale(1.1); }
+.color-option:hover::after {
+    content: attr(data-tooltip);
+    position: absolute; bottom: 110%; left: 50%; transform: translateX(-50%);
+    background-color: #111; color: #fff; padding: 5px 10px; border-radius: 4px;
+    font-size: 0.9rem; white-space: nowrap; z-index: 10;
+}
+
+
+/* --- Gaya untuk Fitur Baru --- */
+#biaya-list { list-style: none; padding: 0; margin-top: 20px; }
+#biaya-list li {
+    display: flex; justify-content: space-between; align-items: center;
+    background: #182a36; padding: 10px; border-radius: 5px; margin-bottom: 5px;
+}
+#biaya-list li.empty { justify-content: center; color: #47e5bc; }
+#biaya-list button { background: #47e5bc; color: #182a36; padding: 5px 10px; border-radius: 5px; cursor: pointer; border: none; }
+#biaya-list li > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#biaya-list .qty-btn,
+#biaya-list .qty-val {
+    margin-top: 0;
+}
+#biaya-list .qty-val {
+    min-width: 32px;
+    text-align: center;
+    background: #30576f;
+    color: #47e5bc;
+    border-radius: 6px;
+    margin: 0 8px;
+    box-shadow: 0 1px 4px rgba(58, 189, 154, 0.12);
+    border: 1.5px solid #000000;
+}
+
+#biaya-list .qty-btn:hover {
+    background: #ff4d80;
+}
+pre#wiring-output { background: #111; padding: 20px; margin-top: 20px; border-radius: 10px; font-family: 'Courier New', Courier, monospace; white-space: pre-wrap; border: 1px solid #2c3e50;}
+
+#project-idea, #favorite-projects { margin-top: 20px; }
+.project-card, .favorite-card {
+    background: #182a36; border-left: 4px solid #47e5bc;
+    padding: 15px; border-radius: 10px; margin-bottom: 15px;
+}
+.project-card h4, .favorite-card h4 { color: #47e5bc; margin-bottom: 8px; }
+.favorite-card { display: flex; justify-content: space-between; align-items: center; }
+.favorite-card p { margin: 0; }
+.project-card ul { margin-top: 10px; padding-left: 20px; }
+.project-card button, .favorite-card button {
+    padding: 8px 12px; font-size: 0.9rem; margin-top: 0; border: none;
+}
+.favorite-card button { 
+    background: #47e5bc; 
+border-radius: 10px;}
+
+.favorite-card button:hover {
+    background: #ff4d80;
+}
+
+p.empty { color: #95a5a6; text-align: center; }
+
+/* Styling untuk Quantity Button */
+.qty-btn {
+    background: #47e5bc;
+    color: #182a36;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    width: 28px;
+    height: 28px;
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.2s;
+}
+
+
+/* Penyesuaian untuk Tampilan Mobile */
+@media screen and (max-width: 768px) {
+    .layanan-title { font-size: 2rem; }
+    .tab { padding: 12px 20px; font-size: 0.9rem; }
+    .layanan-grid { grid-template-columns: 1fr; }
+}
+
+#biaya-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #47e5bc;
+    margin-top: 10px;
+    padding: 0 8px;
+}
+.total-label {
+    text-align: left;
+    flex: 1;
+    padding-left: 12px; /* Jarak kiri */
+}
+.total-value {
+    text-align: right;
+    flex: 1;
+    padding-right: 12px; /* Jarak kanan agar seimbang */
+}
+
+.hapus-btn {
+    background: #47e5bc !important;
+    color: #182a36 !important;
+    border-radius: 4px;
+    font-weight: bold;
+    padding: 0 16px;
+    height: 32px;
+    min-width: 60px;
+    margin-left: 8px;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.hapus-btn:hover {
+    background: #ff4d80 !important;
+}
+
+#biaya-list li > span {
+    padding-right: 12px; /* Jarak kanan harga barang */
+    text-align: right;
+    min-width: 110px; /* opsional: agar rata jika jumlah digit berbeda */
+    display: inline-block;
+}

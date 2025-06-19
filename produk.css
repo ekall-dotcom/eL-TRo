@@ -1,0 +1,238 @@
+.main__content h1{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 125px;
+  margin-left: -10px;
+}
+
+.product-cycler {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  margin-left: 90px;
+  margin-top: -10px ;
+}
+
+.cycler-display {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.cycler-btn {
+  background: linear-gradient(135deg, #182a36 0%, #000 100%);
+  color: #47e5bc;
+  border: none;
+  border-radius: 100px;
+  width: 60px;
+  height: 100px;
+  font-size: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #ff4d80, 0 4px 15px #883955;
+  transition: transform 0.2s ease, box-shadow 0.2s;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cycler-btn:hover {
+  transform: scale(1.3) rotate(-8deg);
+  box-shadow: 0 6px 20px #357ae8;
+}
+
+.cycler-image-wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #fff, 0 4px 15px #000;
+  border-color: #000;
+  background: #182a36;
+  margin-top: 50px;
+}
+
+#cycler-image {
+  max-width: 100%;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+#cycler-caption {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(24, 42, 54, 0.85);
+  color: #47e5bc;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 0.3em 0.8em;
+  margin: 0;
+  z-index: 2;
+  text-align: center;
+  pointer-events: none;
+  max-width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#cycler-rating {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
+  font-size: 1.1rem;
+  color: #ffb400;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.cycler-btn:hover {
+  transform: scale(1.1);
+}
+
+.features-section {
+  padding: 4rem 2rem;
+  background: #47e5bc;
+  margin-top: -20px;
+}
+
+.features-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #182a36; 
+}
+
+.features-title {
+  margin-top: 160px;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: #182a36;
+  color: #47e5bc;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #324FA0;
+}
+
+.feature-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cycler-rating {
+  font-size: 1.1rem;
+  color: #ffb400;
+  font-weight: bold;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  background: #cbf7ed;
+  border-radius: 8px;
+  padding: 0.3rem 0.8rem;
+  display: inline-block;
+}
+
+.stars {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.star {
+  display: inline-block;
+  position: relative;
+  font-size: 1.5em;
+  color: #ffb400;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.star.empty {
+  color: transparent;
+}
+
+.star.half {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  overflow: hidden;
+}
+
+.star.half > span {
+  display: block;
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  line-height: 1;
+  color: #ffb400;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.star.half .star-empty {
+  color: transparent;
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  line-height: 1;
+}
+
+.rating-number {
+  color: #182a36;
+  font-size: 1em;
+  margin-left: 0.3em;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 960px) {
+  .features-container {
+    grid-template-columns: 1fr; 
+  }
+}

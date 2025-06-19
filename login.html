@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>eL_TRo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar__container">
+        <a href="/" id="navbar__logo"><i class="fas fa-bolt"></i>eL-TRo</a>
+        <ul class="navbar__menu">
+          <li class="navbar__item"><a href="index.html" class="navbar__links">Home</a></li>
+          <li class="navbar__item"><a href="produk.html" class="navbar__links">Produk</a></li>
+          <li class="navbar__item"><a href="layanan.html" class="navbar__links">Layanan</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="login-main">
+      <div class="login-card">
+        <h2><i class="fas fa-sign-in-alt"></i> Login </h2>
+        <form>
+          <div class="input-group">
+            <label for="username">Username atau Email</label>
+            <input type="text" id="username" placeholder="Masukkan username/email" required>
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Masukkan password" required>
+          </div>
+          <button type="submit" class="login-btn">Login</button>
+          <div class="login-links">
+            <a href="forgot-password.html">Lupa password?</a>
+            <span>|</span>
+            <a href="register.html">Daftar akun baru</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
